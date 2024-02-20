@@ -16,6 +16,13 @@ public class DiscreteDistribution {
       for (int i = 0; i < n; i++) {
         System.out.println(a[i]);
       }
+
+      String out = "";
+      for (int i = 0; i < m; i++) {
+        int index = (int) (Math.random() * n) + 1;
+        out += index + " ";
+      }
+      System.out.println(out);
     }
   }
 }
