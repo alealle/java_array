@@ -39,7 +39,7 @@ public class DiscreteDistribution {
       // generate output
       StringBuilder out = new StringBuilder();
       for (int i = 0; i < m; i++) {
-        long probToIndex = (long) ((Math.random()) * totalSum);
+        double probToIndex = Math.random() * totalSum;
         // System.out.println("prob_to_index = " + prob_to_index);
         int j = 0;
         while (probToIndex > s[j]) {
