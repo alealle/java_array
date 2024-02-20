@@ -9,17 +9,17 @@ public class ThueMorse {
       thueMorseSequence[0] = false;
       int sizeLastSequence = 1;
       int i = 0, cursor = 1;
-      StringBuilder out = new StringBuilder();
-      out.append((thueMorseSequence[0] ? 1 : 0) + " ");
-      System.out.println(out);
+      // StringBuilder out = new StringBuilder();
+      // out.append((thueMorseSequence[0] ? 1 : 0) + " ");
+      // System.out.println(out);
       while (sizeLastSequence < n) {
         for (i = 0; (i < sizeLastSequence) && (cursor < n); i++, cursor++) {
           thueMorseSequence[cursor] = !thueMorseSequence[i];
-          out.append((thueMorseSequence[cursor] ? 1 : 0) + " ");
+          // out.append((thueMorseSequence[cursor] ? 1 : 0) + " ");
         }
         sizeLastSequence = cursor;
-        System.out.println("Size last seq = " + sizeLastSequence);
-        System.out.println(out);
+        // System.out.println("Size last seq = " + sizeLastSequence);
+        // System.out.println(out);
       }
 
       // Use sequence to print matrix
