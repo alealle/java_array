@@ -1,8 +1,10 @@
 public class Birthday {
-  public static final int MAX_PERSONS = 50;
-  public static final int MAX_PERSONS_1 = MAX_PERSONS - 1;
+  // public static final int MAX_PERSONS = 50;
+  // public static final int MAX_PERSONS_1 = MAX_PERSONS - 1;
 
   public static void main(String[] args) {
+    final int MAX_PERSONS = 50;
+    final int MAX_PERSONS_1 = MAX_PERSONS - 1;
     if (args.length != 2) {
       System.out.println("Provide n dates and m trials!");
       return;
@@ -30,7 +32,7 @@ public class Birthday {
       // the number of persons --> starts negatively as device to store from i=0 in
       // vector times
       count = -1;
-      while (shared == false && count < Birthday.MAX_PERSONS) {
+      while (!shared && count < MAX_PERSONS) {
         // get one more person in the room
         ++count;
         // System.out.println((count + 1) + " person in the room");
@@ -65,12 +67,12 @@ public class Birthday {
     }
     // print results
     count = 0;
-    float fraction = 0;
+    double fraction = 0;
 
     do {
-      fraction += ((float) times[count]) / trials;
-      System.out.format("%8d     %8d      %7.6f%n", count + 1, times[count], fraction);
+      fraction += ((double) times[count]) / trials;
+      System.out.println((count + 1) + " " + times[count] + " " + fraction);
       count++;
-    } while ((fraction <= 0.5) && (count < MAX_PERSONS));
+    } while ((fraction < 0.5) && (count < MAX_PERSONS));
   }
 }
