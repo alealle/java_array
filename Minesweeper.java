@@ -11,7 +11,7 @@ public class Minesweeper {
     }
     // swap mine positions
     for (int i = 0; i < N; i++) {
-      int change = (int) (Math.random() * N);
+      int change = i + (int) (Math.random() * (N - i));
       int tmp = mine_positions[i];
       mine_positions[i] = mine_positions[change];
       mine_positions[change] = tmp;
